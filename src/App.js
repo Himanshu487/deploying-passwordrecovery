@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+function App()
+{
+
+  const [email,setemail]=useState("");
+
+  function updatecontent(event)
+  {
+    const newpass=event.target.value;
+    setemail(newpass);
+  }
+
+  return(
+
+<div >
+
+<p className="title"  >PASSWORD RECOVERY</p>
+  <p className="title1" >Please fill the form to recover your password</p>
+  <div className="container">
+ 
+
+  <p>Enter your email address or mobile no. and your password will be reset and emailed to you</p>
+<p>Email or Mobile</p>
+<input className="box" onChange={updatecontent} placeholder="Mobile or email" name="email" type="text" value={email}/>
+<br/>
+<p>Your registered email address</p>
+  <button className="btn">Reset password</button>
+  </div>
+
+</div>
+
+  )
 }
 
 export default App;
